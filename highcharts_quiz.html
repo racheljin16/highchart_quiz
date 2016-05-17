@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<title>highcharts</title>
+</head>
+<body>
+	<div id="chartcontainer"></div>
+	<script>
+		$(document).ready(function(){
+			var chart1;
+			chart1 = new Highcharts.Chart({
+				chart: {
+					renderTo: 'chartcontainer',
+					type: 'column'
+				},
+				title: {
+					text: 'Box Office Collection'
+				},
+				xAxis: {
+					categories: ['Day 1', 'Day 4', 'Day 8', 'Day 12', 'Day 16', 'Day 24', 'Day 28']
+				},
+				yAxis: {
+					
+					title: {
+						text: 'Box Office Collection Comparison (in Millions)'
+					}
+				},
+				plotOptions: {
+					column: {
+                		stacking: 'normal',
+                	}
+				},
+				series: [{
+					Name: 'Matian',
+					data: [77.4,54.5,36.4,23.7,12.8,8.5,2.8]
+				}, {
+					Name: 'Interstellar',
+					data: [80.5,57.2,35.6,28.5,11.9,4.3,2.2]
+				}]
+			});
+		});
+	</script>
+</body>
+</html>
